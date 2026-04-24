@@ -1,0 +1,24 @@
+{
+  "name": "gamemaker",
+  "version": "1.0.0",
+  "description": "브라우저에서 바로 돌아가는 웹게임 허브.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bugeun/gamemaker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Bugeun/gamemaker/issues"
+  },
+  "homepage": "https://github.com/Bugeun/gamemaker#readme",
+  "devDependencies": {
+    "playcanvas": "^2.18.0"
+  }
+}
