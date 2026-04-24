@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>근육 고양이 3D Gym</title>
+<meta name="theme-color" content="#0a0b10">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://esm.sh/three@0.184.0",
+    "three/addons/": "https://esm.sh/three@0.184.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+  <nav class="nav">
+    <a href="../../" class="nav-back">← 허브</a>
+    <div class="nav-title">근육 고양이 3D Gym 🏋️</div>
+    <a href="../muscle-cat/" class="nav-2d" title="2D 버전으로">2D</a>
+  </nav>
+
+  <main class="stage">
+    <canvas id="canvas"></canvas>
+    <div class="hud-top">
+      <div class="cat-name" id="cat-name">—</div>
+      <div class="cat-stage" id="cat-stage">—</div>
+    </div>
+    <div class="hud-bot">
+      <div class="xp-row">
+        <span class="level-badge">Lv <span id="cat-level">1</span></span>
+        <div class="xp-bar">
+          <div class="xp-fill" id="xp-fill"></div>
+          <div class="xp-text" id="xp-text">0 / 0</div>
+        </div>
+      </div>
+      <div class="cat-cycler">
+        <button class="btn-ghost" id="btn-prev" aria-label="prev">◀</button>
+        <span class="cat-counter" id="cat-counter">1 / 1</span>
+        <button class="btn-ghost" id="btn-next" aria-label="next">▶</button>
+      </div>
+      <div class="controls">
+        <button class="btn btn-primary" id="btn-train">
+          <span class="btn-icon">💪</span>
+          <span>훈련 +3 XP</span>
+        </button>
+        <button class="btn btn-secondary" id="btn-autorotate" data-on="true">
+          <span>🔄 자동회전</span>
+        </button>
+      </div>
+    </div>
+    <div class="toast" id="toast"></div>
+    <div class="hint" id="hint">🖱 드래그로 회전 · 스크롤로 줌</div>
+  </main>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
