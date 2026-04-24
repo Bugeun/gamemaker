@@ -20,5 +20,8 @@
   "homepage": "https://github.com/Bugeun/gamemaker#readme",
   "devDependencies": {
     "playcanvas": "^2.18.0"
+  },
+  "dependencies": {
+    "three": "^0.184.0"
   }
 }
