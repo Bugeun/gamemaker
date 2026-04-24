@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GameMaker · 웹게임 아케이드</title>
+<meta name="description" content="브라우저에서 바로 돌아가는 웹게임 허브.">
+<style>
+  :root {
+    --bg: #0a0b10;
+    --bg-2: #12141c;
+    --fg: #e8eaf0;
+    --dim: #7a7f8c;
+    --accent: #7c5cff;
+    --accent-2: #ff3e88;
+    --border: rgba(255,255,255,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+    min-height: 100vh;
+    background-image:
+      radial-gradient(circle at 20% -10%, rgba(124,92,255,0.25), transparent 40%),
+      radial-gradient(circle at 80% 10%, rgba(255,62,136,0.15), transparent 45%);
+    background-attachment: fixed;
+    -webkit-font-smoothing: antialiased;
+  }
+  header {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 96px 32px 48px;
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    background: linear-gradient(120deg, #fff 0%, #a5a1ff 50%, #ff8fbe 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1.05;
+  }
+  .tagline {
+    margin-top: 20px;
+    color: var(--dim);
+    font-size: 18px;
+    max-width: 520px;
+    line-height: 1.6;
+  }
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px 32px 96px;
+  }
+  .section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: var(--dim);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin: 32px 0 20px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .card {
+    position: relative;
+    background: var(--bg-2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 24px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    overflow: hidden;
+  }
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(124,92,255,0.5);
+    box-shadow: 0 20px 40px -20px rgba(124,92,255,0.4);
+  }
+  .card.coming {
+    border-style: dashed;
+    opacity: 0.55;
+    cursor: default;
+  }
+  .card.coming:hover {
+    transform: none;
+    border-color: var(--border);
+    box-shadow: none;
+  }
+  .card-emoji {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+  .card-title {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+  }
+  .card-desc {
+    font-size: 14px;
+    color: var(--dim);
+    line-height: 1.5;
+  }
+  .card-tag {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-top: 16px;
+  }
+  .card.coming .card-tag { color: var(--dim); }
+  footer {
+    max-width: 1100px;
+    margin: 48px auto 0;
+    padding: 32px;
+    text-align: center;
+    color: var(--dim);
+    font-size: 13px;
+    border-top: 1px solid var(--border);
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+  <header>
+    <span class="eyebrow">Web Games · 웹게임 아케이드</span>
+    <h1>GameMaker</h1>
+    <p class="tagline">브라우저에서 바로 돌아가는 미니 게임 허브. 설치 없이 클릭 한 번으로 플레이.</p>
+  </header>
+
+  <main>
+    <div class="section-label">Games</div>
+    <div class="grid">
+      <div class="card coming" aria-disabled="true">
+        <div>
+          <div class="card-emoji">🎮</div>
+          <div class="card-title">첫 번째 게임</div>
+          <div class="card-desc">곧 공개됩니다. 이 자리에 첫 웹게임이 들어가요.</div>
+        </div>
+        <span class="card-tag">Coming Soon</span>
+      </div>
+      <div class="card coming" aria-disabled="true">
+        <div>
+          <div class="card-emoji">🕹️</div>
+          <div class="card-title">준비 중</div>
+          <div class="card-desc">아케이드 장르를 계획 중이에요.</div>
+        </div>
+        <span class="card-tag">Planning</span>
+      </div>
+      <div class="card coming" aria-disabled="true">
+        <div>
+          <div class="card-emoji">🧩</div>
+          <div class="card-title">준비 중</div>
+          <div class="card-desc">퍼즐 기반 게임을 구상 중입니다.</div>
+        </div>
+        <span class="card-tag">Planning</span>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    Built with love · <a href="https://github.com/Bugeun/gamemaker">GitHub</a>
+  </footer>
+</body>
+</html>
