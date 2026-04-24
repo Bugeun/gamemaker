@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>근육 고양이 · Muscle Cat</title>
+<meta name="description" content="레벨업 할수록 근육이 커지는 고양이를 수집하세요.">
+<meta name="theme-color" content="#0a0b10">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="nav">
+    <a href="../../" class="nav-back">← 허브</a>
+    <div class="nav-title">근육 고양이 🐱💪</div>
+    <button class="nav-reset" id="btn-reset" title="데이터 초기화" aria-label="reset">↻</button>
+  </nav>
+
+  <header class="stats">
+    <div class="stat">
+      <span class="stat-icon">🪙</span>
+      <span class="stat-value" id="stat-coins">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-icon">🐾</span>
+      <span class="stat-value" id="stat-cats">0</span>
+    </div>
+  </header>
+
+  <main class="stage">
+    <div class="stage-bg"></div>
+    <div class="cat-wrap" id="cat-wrap">
+      <div class="cat-svg" id="cat-svg"></div>
+    </div>
+    <div class="cat-info">
+      <div class="cat-name" id="cat-name">—</div>
+      <div class="cat-stage-label" id="cat-stage">—</div>
+      <div class="cat-level">
+        <span class="level-badge">Lv <span id="cat-level">1</span></span>
+      </div>
+      <div class="xp-bar">
+        <div class="xp-fill" id="xp-fill"></div>
+        <div class="xp-text" id="xp-text">0 / 0 XP</div>
+      </div>
+    </div>
+  </main>
+
+  <section class="controls">
+    <button class="btn btn-primary" id="btn-train">
+      <span class="btn-icon">💪</span>
+      <span class="btn-label">훈련</span>
+      <span class="btn-sub">+2 XP</span>
+    </button>
+    <button class="btn btn-secondary" id="btn-feed">
+      <span class="btn-icon">🍣</span>
+      <span class="btn-label">먹이</span>
+      <span class="btn-sub">+8 XP · 🪙3</span>
+    </button>
+    <button class="btn btn-summon" id="btn-summon">
+      <span class="btn-icon">✨</span>
+      <span class="btn-label">소환</span>
+      <span class="btn-sub">🪙50</span>
+    </button>
+  </section>
+
+  <section class="collection">
+    <div class="section-label">수집한 고양이 <span id="collection-count">0</span></div>
+    <div class="grid" id="collection-grid"></div>
+  </section>
+
+  <div class="toast" id="toast"></div>
+  <script src="main.js"></script>
+</body>
+</html>
