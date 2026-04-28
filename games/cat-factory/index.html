@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>냥냥 공장</title>
+<meta name="theme-color" content="#e6cd9a">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="../../" class="back" aria-label="back">←</a>
+    <div class="player">
+      <div class="avatar">🐱</div>
+      <div class="player-info">
+        <div class="player-name">냥냥 공장</div>
+        <div class="lv-row">
+          <span class="lv-badge">LV <span id="lv">1</span></span>
+          <div class="xp-bar"><div class="xp-fill" id="xp-fill"></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="resources">
+      <div class="res"><span class="res-icon">🪙</span><span id="coins">100</span></div>
+      <div class="res"><span class="res-icon">💎</span><span id="gems">5</span></div>
+    </div>
+  </header>
+
+  <main class="farm">
+    <div class="ground"></div>
+
+    <div class="tile tile-cow" id="tile-cow">
+      <div class="worker">×<span id="cow-workers">1</span> 🐱</div>
+      <div class="sprite">🐮</div>
+      <div class="status" id="cow-status">생산 중</div>
+      <div class="progress"><div class="bar" id="cow-bar"></div></div>
+      <div class="stock"><span id="cow-stock">0</span> 🥛</div>
+    </div>
+
+    <div class="tile tile-garden" id="tile-garden">
+      <div class="worker">×<span id="farm-workers">1</span> 🐱</div>
+      <div class="sprite">🍅</div>
+      <div class="status" id="garden-status">자동 물주기 중</div>
+      <div class="progress"><div class="bar" id="garden-bar"></div></div>
+      <div class="stock"><span id="garden-stock">0</span> 🍅</div>
+    </div>
+
+    <div class="tile tile-bottler" id="tile-bottler">
+      <div class="worker">×<span id="bottler-workers">1</span> 🐱</div>
+      <div class="sprite">🍼</div>
+      <div class="status" id="bottler-status">자동 포장 중</div>
+      <div class="progress"><div class="bar" id="bottler-bar"></div></div>
+      <div class="stock"><span id="bottler-stock">0</span> 🍼</div>
+    </div>
+
+    <div class="tile tile-shop" id="tile-shop">
+      <div class="sprite">🏪</div>
+      <div class="status">신선한 우유 판매 중</div>
+      <button class="sell-btn" id="btn-sell">팔기 🪙</button>
+    </div>
+
+    <div class="chat-bubble" id="chat-bubble"></div>
+    <div class="floater-layer" id="floater-layer"></div>
+  </main>
+
+  <nav class="bottom-nav">
+    <button class="nav-btn" data-modal="build">
+      <div class="nav-icon">🔨</div><div class="nav-label">건설</div>
+    </button>
+    <button class="nav-btn" data-modal="staff">
+      <div class="nav-icon">⚙️</div><div class="nav-label">생산</div>
+    </button>
+    <button class="nav-btn" data-modal="bag">
+      <div class="nav-icon">🎒</div><div class="nav-label">가방</div>
+    </button>
+    <button class="nav-btn" data-modal="codex">
+      <div class="nav-icon">📖</div><div class="nav-label">도감</div>
+    </button>
+    <button class="nav-btn" data-modal="shop">
+      <div class="nav-icon">🏪</div><div class="nav-label">상점</div>
+    </button>
+    <button class="nav-btn" data-modal="journal">
+      <div class="nav-icon">📓</div>
+      <div class="nav-label">일지</div>
+      <span class="quest-pip" id="quest-pip">0/3</span>
+    </button>
+  </nav>
+
+  <dialog id="modal" class="modal">
+    <div class="modal-header">
+      <h2 id="modal-title">메뉴</h2>
+      <button id="modal-close" class="modal-close" aria-label="close">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </dialog>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="main.js"></script>
+</body>
+</html>
